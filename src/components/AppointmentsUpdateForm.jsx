@@ -11,7 +11,7 @@ export default function AppointmentsUpdateForm() {
     myHeaders.append("Authorization", `Token ${DENTALINK_KEY}`);
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify({
-        "id_estado": 24
+        "id_estado": 7
     });
     var requestOptions = {
         method: 'PUT',
@@ -22,7 +22,10 @@ export default function AppointmentsUpdateForm() {
 
     // Función Recursiva
     const updateAppointment = async (url, appointments, requestOptions, retryLimit = 50, retryCount = 0, index = 0) => {
-        if (index === appointments.length) { return }
+        if (index === appointments.length) {
+            console.log('Finalizado');
+            return
+        }
         else {
             return fetch(`${url}${appointments[index]}`, requestOptions)
                 .then(async (res) => {
@@ -34,13 +37,27 @@ export default function AppointmentsUpdateForm() {
                         }, 1000);
                         index++
                     } else {
-                        if (data.error.code === 429 && retryCount < retryLimit) {
-                            console.log("Error 429, reintentando en unos segundos");
-                            setTimeout(() => {
-                                return updateAppointment(url, appointmentsIDs, requestOptions, retryLimit, retryCount + 1, index);
-                            }, 5000);
-                        } else {
-                            console.log("Error diferente al 429", res);
+                        switch (data.error.code) {
+                            case 400:
+                                console.log(`Error ${data.error.code}, pasando al siguiente`);
+                                index++
+                                setTimeout(() => {
+                                    return updateAppointment(url, appointmentsIDs, requestOptions, retryLimit, retryCount, index);
+                                }, 1000);
+                                break;
+                            case 405:
+                                console.log(`Error ${data.error.code}, pasando al siguiente`);
+                                index++
+                                setTimeout(() => {
+                                    return updateAppointment(url, appointmentsIDs, requestOptions, retryLimit, retryCount, index);
+                                }, 1000);
+                                break;
+                            default:
+                                console.log(`Error ${data.error.code}, reintentando en unos segundos`);
+                                setTimeout(() => {
+                                    return updateAppointment(url, appointmentsIDs, requestOptions, retryLimit, retryCount + 1, index);
+                                }, 5000);
+                                break;
                         }
                     }
                 })

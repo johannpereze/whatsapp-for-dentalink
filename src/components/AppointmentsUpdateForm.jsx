@@ -71,7 +71,7 @@ export default function AppointmentsUpdateForm() {
         myHeaders.append("Authorization", `Token ${DENTALINK_KEY}`);
         myHeaders.append("Content-Type", "application/json");
         const raw = JSON.stringify({
-            "id_estado": 7
+            "id_estado": 24
         });
         const requestOptions = {
             method: 'PUT',

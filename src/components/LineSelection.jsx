@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
 
 export default function LineSelection() {
 
@@ -25,7 +25,9 @@ export default function LineSelection() {
 
     return (
         <div>
-            <h3>Selección de línea</h3>
+            <Typography sx={{ mt: 2 }} variant="h6" component="h2">
+                Selección de línea
+            </Typography>
             <FormControl fullWidth sx={{ mt: 2 }}>
                 <InputLabel id="whatsapp-simple-select-label">Selecciona la Línea de WhatsApp</InputLabel>
                 <Select

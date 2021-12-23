@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
-import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@mui/material';
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Typography } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
@@ -39,10 +39,10 @@ export default function KeyInput() {
 
     return (
         <div>
-            <h3>Iniciar Sesión</h3>
-
-
-            <FormControl fullWidth sx={{ mt: 2}} variant="outlined">
+            <Typography sx={{ mt: 2 }} variant="h6" component="h2">
+                Iniciar Sesión
+            </Typography>
+            <FormControl fullWidth sx={{ mt: 2 }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Contraseña Dentalink</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"

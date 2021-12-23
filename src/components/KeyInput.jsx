@@ -42,7 +42,7 @@ export default function KeyInput() {
             <h3>Iniciar Sesión</h3>
 
 
-            <FormControl sx={{ m: 2, width: '90%' }} variant="outlined">
+            <FormControl fullWidth sx={{ mt: 2}} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Contraseña Dentalink</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"

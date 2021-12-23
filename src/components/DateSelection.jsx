@@ -9,7 +9,7 @@ export default function DateSelection() {
     const saveAppointmentsDate = (e) => {
         console.log(e); //Este no lo necesito por ahora
         console.log(appointmentsDate);
-        console.log("Ocultamos Componente");
+        console.log("Mostramos las sedes");
     }
 
     return (
@@ -24,7 +24,7 @@ export default function DateSelection() {
                     }}
                     renderInput={(params) => <TextField {...params} />}
                 />
-                <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveAppointmentsDate}>Siguiente</Button>
+                <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveAppointmentsDate}>Guardar fecha</Button>
 
             </FormControl>
         </div>

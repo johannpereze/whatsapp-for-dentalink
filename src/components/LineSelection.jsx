@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
+import { DatePicker } from '@mui/lab'
 
 export default function LineSelection() {
 
@@ -22,6 +23,8 @@ export default function LineSelection() {
         console.log(whatsAppLine);
         console.log(whatsAppNote);
     }
+
+    const [value, setValue] = useState(null)
 
     return (
         <div>
@@ -50,6 +53,14 @@ export default function LineSelection() {
                 />
                 <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveWhatsAppAndNote}>Siguiente</Button>
             </FormControl>
+            <DatePicker
+                label="Basic example"
+                value={value}
+                onChange={(newValue) => {
+                    setValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+            />
         </div>
     )
 }

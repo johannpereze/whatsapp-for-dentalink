@@ -11,7 +11,7 @@ export default function AppointmentsUpdateForm() {
 
     // Funciones Recursivas
 
-    const downloadWA = async (patients, retryLimit = 50, retryCount = 0, index = 0) => {
+    const downloadWA = async (patients, retryCount = 0, retryLimit = 10, index = 0) => {
         const url = 'https://api.dentalink.healthatom.com/api/v1/pacientes/'
         const myHeaders = new Headers();
         myHeaders.append("Authorization", `Token ${DENTALINK_KEY}`);
@@ -23,7 +23,6 @@ export default function AppointmentsUpdateForm() {
 
         if (index === patients.length) {
             console.log('Finalizado');
-            return
         }
         else {
             return fetch(`${url}${patients[index]}`, requestOptions)
@@ -33,31 +32,22 @@ export default function AppointmentsUpdateForm() {
                     if (data.data) {
                         console.log(data.data.celular)
                         setTimeout(() => {
-                            return downloadWA(patients, retryLimit, retryCount, index)
+                            return downloadWA(patients, retryCount, retryLimit, index)
                         }, 1000);
                         index++
                     } else {
-                        switch (data.error.code) {
-                            case 400:
-                                console.log(`Error ${data.error.code}, pasando al siguiente`);
-                                index++
-                                setTimeout(() => {
-                                    return downloadWA(patients, retryLimit, retryCount, index);
-                                }, 1000);
-                                break;
-                            case 405:
-                                console.log(`Error ${data.error.code}, pasando al siguiente`);
-                                index++
-                                setTimeout(() => {
-                                    return downloadWA(patients, retryLimit, retryCount, index);
-                                }, 1000);
-                                break;
-                            default:
-                                console.log(`Error ${data.error.code}, reintentando en unos segundos`);
-                                setTimeout(() => {
-                                    return downloadWA(patients, retryLimit, retryCount + 1, index);
-                                }, 5000);
-                                break;
+                        const { code } = data.error
+                        if (code === 400) {
+                            console.log(`Error ${code}, pasando al siguiente`);
+                            index++
+                            setTimeout(() => {
+                                return downloadWA(patients, retryCount, retryLimit, index);
+                            }, 1000);
+                        } else {
+                            console.log(`Error ${code}, reintentando en unos segundos`);
+                            setTimeout(() => {
+                                return downloadWA(patients, retryCount + 1, retryLimit, index);
+                            }, 5000);
                         }
                     }
                 })
@@ -65,7 +55,7 @@ export default function AppointmentsUpdateForm() {
     }
 
 
-    const updateAppointment = async (appointments, retryLimit = 50, retryCount = 0, index = 0) => {
+    const updateAppointment = async (appointments, retryCount = 0, retryLimit = 10, index = 0) => {
         const url = 'https://api.dentalink.healthatom.com/api/v1/citas/'
         const myHeaders = new Headers();
         myHeaders.append("Authorization", `Token ${DENTALINK_KEY}`);
@@ -95,27 +85,18 @@ export default function AppointmentsUpdateForm() {
                         }, 1000);
                         index++
                     } else {
-                        switch (data.error.code) {
-                            case 400:
-                                console.log(`Error ${data.error.code}, pasando al siguiente`);
-                                index++
-                                setTimeout(() => {
-                                    return updateAppointment(appointments, retryLimit, retryCount, index);
-                                }, 1000);
-                                break;
-                            case 405:
-                                console.log(`Error ${data.error.code}, pasando al siguiente`);
-                                index++
-                                setTimeout(() => {
-                                    return updateAppointment(appointments, retryLimit, retryCount, index);
-                                }, 1000);
-                                break;
-                            default:
-                                console.log(`Error ${data.error.code}, reintentando en unos segundos`);
-                                setTimeout(() => {
-                                    return updateAppointment(appointments, retryLimit, retryCount + 1, index);
-                                }, 5000);
-                                break;
+                        const { code } = data.error
+                        if (code === 400 || code === 405) {
+                            console.log(`Error ${code}, pasando al siguiente`);
+                            index++
+                            setTimeout(() => {
+                                return updateAppointment(appointments, retryLimit, retryCount, index);
+                            }, 1000);
+                        } else {
+                            console.log(`Error ${code}, reintentando en unos segundos`);
+                            setTimeout(() => {
+                                return updateAppointment(appointments, retryLimit, retryCount + 1, index);
+                            }, 5000);
                         }
                     }
                 })
@@ -128,11 +109,11 @@ export default function AppointmentsUpdateForm() {
     // }
     const dentalinkWADownloads = () => {
         console.log(patientsIDs);
-        downloadWA(patientsIDs, 10)
+        downloadWA(patientsIDs)
     }
     const dentalinkStateUpdate = () => {
         console.log(appointmentsIDs);
-        updateAppointment(appointmentsIDs, 10)
+        updateAppointment(appointmentsIDs)
     }
 
     const handleAppointmentsChange = ({ target }) => {

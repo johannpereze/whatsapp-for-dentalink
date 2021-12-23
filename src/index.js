@@ -6,14 +6,15 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterMoment from "@mui/lab/AdapterMoment";
+import {es} from 'moment/locale/es'
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <LocalizationProvider dateAdapter={AdapterMoment}>
+      <LocalizationProvider dateAdapter={AdapterMoment} locale={es}>
         <App />
       </LocalizationProvider>
-    </ThemeProvider>;
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

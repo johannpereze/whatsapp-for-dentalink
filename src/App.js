@@ -6,6 +6,7 @@ import HorizontalStepper from './components/HorizontalStepper';
 import KeyInput from './components/KeyInput';
 import LineSelection from './components/LineSelection';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
+import TemplateSelection from './components/TemplateSelection';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <LineSelection />
       <DateSelection />
       <ClinicsList />
+      <TemplateSelection />
       {/* <AppointmentsUpdateForm /> */}
     </div>
   )

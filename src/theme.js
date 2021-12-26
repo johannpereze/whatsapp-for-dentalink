@@ -9,10 +9,16 @@ const theme = createTheme({
             // dark: will be calculated from palette.primary.main,
             contrastText: '#fff'
         },
-        background: {
-            default: '#4caf50'
-        }
-    }
+    },
+    // components: {
+    //     MuiCssBaseline: {
+    //         styleOverrides: {
+    //             body: {
+    //                 backgroundColor: "#f5f5f5f5",
+    //             }
+    //         }
+    //     }
+    // }
 })
 
 export default theme

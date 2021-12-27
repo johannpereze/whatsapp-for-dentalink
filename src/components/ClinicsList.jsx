@@ -10,8 +10,8 @@ export default function ClinicsList() {
     }
 
     const columns = [
-        { field: 'id', headerName: 'ID', width: 100},
-        { field: 'name', headerName: 'nombre', minWidth: 300},
+        { field: 'id', headerName: 'ID', width: 100 },
+        { field: 'name', headerName: 'nombre', minWidth: 300 },
     ];
 
     const rows = [
@@ -27,17 +27,18 @@ export default function ClinicsList() {
     ];
 
     return (
-        <div style={{ height: 400, width: '100%' }}>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                pageSize={25}
-                hideFooterPagination
-                // rowsPerPageOptions={[10]}
-                checkboxSelection
-            />
+        <div>
+            <div style={{ height: 400, width: '100%' }}>
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    pageSize={25}
+                    hideFooterPagination
+                    // rowsPerPageOptions={[10]}
+                    checkboxSelection
+                />
+            </div>
             <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveSelectedClinics}>Siguiente</Button>
-
         </div>
     )
 }

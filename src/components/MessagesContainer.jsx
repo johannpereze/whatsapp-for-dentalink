@@ -13,7 +13,7 @@ export default function MessagesContainer() {
                 Mensajes a enviar:
             </Typography>
             <div>
-                {messages.map((message) => <Message message={message} />)}
+                {messages.map((message) => <Message key={message} message={message} />)}
             </div>
         </div>
     )

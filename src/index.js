@@ -8,12 +8,10 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterMoment from "@mui/lab/AdapterMoment";
 import { es } from 'moment/locale/es'
 import { GlobalStyles } from '@mui/material';
-// import CssBaseline from "@mui/material/CssBaseline"; Rsetea todo. Sólo quiero cambiar el backgroundColor
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      {/* <CssBaseline /> */}
       <GlobalStyles styles={{ body: { backgroundColor: '#f5f5f5' } }} />
       <LocalizationProvider dateAdapter={AdapterMoment} locale={es}>
         <App />

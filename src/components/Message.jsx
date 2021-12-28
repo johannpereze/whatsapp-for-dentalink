@@ -4,7 +4,7 @@ import { InfoOutlined } from '@mui/icons-material';
 
 export default function Message({ message }) {
     return (
-        <Paper sx={{ p: 2, m: 2 }}>
+        <Paper elevation={3} sx={{ p: 2, m: 2 }}>
             <Typography variant="body1" component="body1">
                 {message}
             </Typography>

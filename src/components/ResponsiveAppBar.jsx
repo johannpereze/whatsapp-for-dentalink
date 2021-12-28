@@ -35,7 +35,7 @@ const ResponsiveAppBar = () => {
     };
 
     return (
-        <AppBar position="static" sx={{ padding: 0 }}>
+        <AppBar position="static" sx={{ padding: 0, margin: 0 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography

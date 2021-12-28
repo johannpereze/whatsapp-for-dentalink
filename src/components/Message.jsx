@@ -9,7 +9,7 @@ export default function Message({ message }) {
                 {message}
             </Typography>
             <hr />
-            <Stack direction="row" spacing={1}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
                 <Chip icon={<InfoOutlined />} label="Sin enviar" color="warning" />
                 <Chip icon={<InfoOutlined />} label="Sin actualizar en dentalink" color="warning" />
             </Stack>

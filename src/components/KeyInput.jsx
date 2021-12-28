@@ -4,7 +4,7 @@ import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Pap
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-export default function KeyInput() {
+export default function KeyInput({ componentVisibility, setComponentVisibility }) {
 
     const [secretKeys, setSecretKeys] = useState({
         dentalinkKey: '',
@@ -35,6 +35,7 @@ export default function KeyInput() {
         e.preventDefault()
         console.log(dentalinkKey);
         console.log("Ocultamos componente");
+        setComponentVisibility({ ...componentVisibility, lineSelection: true, keyInput: false })
     }
 
     return (

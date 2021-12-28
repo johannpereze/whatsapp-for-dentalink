@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ProgressBarDeterminate from './ProgressBarDeterminate'
 import ProgressBarIndeterminate from './ProgressBarIndeterminate'
 import { Send, ArrowCircleDown, ArrowCircleUp } from "@mui/icons-material";
+import MessagesContainer from './MessagesContainer';
 
 export default function SummaryAndSending() {
     const [sendingParams] = useState({
@@ -47,6 +48,7 @@ export default function SummaryAndSending() {
                     </Button>
                 </Grid>
             </Grid>
+            <MessagesContainer />
         </div>
     )
 }

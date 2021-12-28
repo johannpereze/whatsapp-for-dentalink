@@ -10,6 +10,7 @@ import SummaryAndSending from './components/SummaryAndSending';
 import TemplateSelection from './components/TemplateSelection';
 
 function App() {
+  
   return (
     <div >
       <ResponsiveAppBar />
@@ -26,3 +27,9 @@ function App() {
 }
 
 export default App;
+
+
+/* Dudas:
+  *Cambiar Background Color
+  
+*/

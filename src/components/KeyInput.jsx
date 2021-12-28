@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
-import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Typography } from '@mui/material';
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Paper, Typography } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
@@ -38,7 +38,7 @@ export default function KeyInput() {
     }
 
     return (
-        <div>
+        <Paper>
             <Typography sx={{ mt: 2 }} variant="h6" component="h2">
                 Iniciar Sesión
             </Typography>
@@ -65,22 +65,6 @@ export default function KeyInput() {
                 />
                 <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveDentalinkKey}>Siguiente</Button>
             </FormControl>
-            {/* <form action="">
-                <div >
-                    <div >
-                        <span ><i >key_icon</i></span>
-                        <input
-                            type="password"
-                            name="dentalinkKey"
-                            id="dentalinkKey"
-                            value={dentalinkKey}
-                            onChange={handleInputChange}
-                            placeholder="Contraseña de Dentalink..."
-                        />
-                    </div>
-                    <Button variant="contained" type="submit" label="Siguiente" onClick={saveDentalinkKey}>Siguiente</Button>
-                </div>
-            </form> */}
-        </div>
+        </Paper>
     )
 }

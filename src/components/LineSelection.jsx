@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material'
+import { Button, FormControl, InputLabel, MenuItem, Paper, Select, TextField, Typography } from '@mui/material'
 
 export default function LineSelection() {
 
@@ -24,7 +24,7 @@ export default function LineSelection() {
     }
 
     return (
-        <div>
+        <Paper>
             <Typography sx={{ mt: 2 }} variant="h6" component="h2">
                 Selección de línea
             </Typography>
@@ -50,6 +50,6 @@ export default function LineSelection() {
                 />
                 <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveWhatsAppAndNote}>Siguiente</Button>
             </FormControl>
-        </div>
+        </Paper>
     )
 }

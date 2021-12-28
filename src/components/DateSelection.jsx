@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { DatePicker } from '@mui/lab'
-import { Button, FormControl, TextField, Typography } from '@mui/material';
+import { Button, FormControl, Paper, TextField, Typography } from '@mui/material';
 
 export default function DateSelection() {
 
@@ -13,7 +13,7 @@ export default function DateSelection() {
     }
 
     return (
-        <div >
+        <Paper >
             <Typography sx={{ mt: 2 }} variant="h6" component="h2">Selecciona la fecha de las citas</Typography>
             <FormControl fullWidth sx={{ mt: 2 }}>
                 <DatePicker
@@ -27,6 +27,6 @@ export default function DateSelection() {
                 <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveAppointmentsDate}>Guardar fecha</Button>
 
             </FormControl>
-        </div>
+        </Paper>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
-import { Button } from '@mui/material';
+import { Button, Paper, Typography } from '@mui/material';
 
 
 export default function ClinicsList() {
@@ -27,8 +27,9 @@ export default function ClinicsList() {
     ];
 
     return (
-        <div>
-            <div style={{ height: 400, width: '100%' }}>
+        <Paper>
+            <Typography sx={{ mt: 2 }} variant="h6" component="h2">Sucursales</Typography>
+            <div style={{ height: 400, width: '100%', marginTop: '20px' }}>
                 <DataGrid
                     rows={rows}
                     columns={columns}
@@ -39,6 +40,6 @@ export default function ClinicsList() {
                 />
             </div>
             <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveSelectedClinics}>Siguiente</Button>
-        </div>
+        </Paper>
     )
 }

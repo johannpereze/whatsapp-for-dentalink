@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Button, Grid, Paper, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import ProgressBarDeterminate from './ProgressBarDeterminate'
 import ProgressBarIndeterminate from './ProgressBarIndeterminate'
@@ -18,7 +18,7 @@ export default function SummaryAndSending() {
     const progress = 50 //este es el porcentaje de la barra de progreso
 
     return (
-        <div>
+        <Paper>
             <Typography sx={{ mt: 2 }} variant="h6" component="h6">Resumen del Envío</Typography>
             <Typography variant='body1' component="div">
                 <ul>
@@ -49,6 +49,6 @@ export default function SummaryAndSending() {
                 </Grid>
             </Grid>
             <MessagesContainer />
-        </div>
+        </Paper>
     )
 }

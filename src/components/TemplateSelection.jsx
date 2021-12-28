@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material'
+import { Button, FormControl, InputLabel, MenuItem, Paper, Select, Typography } from '@mui/material'
 
 export default function TemplateSelection() {
 
@@ -37,7 +37,7 @@ export default function TemplateSelection() {
     }
 
     return (
-        <div>
+        <Paper>
             <Typography sx={{ mt: 2 }} variant="h6" component="h2">
                 Selección de Plantilla
             </Typography>
@@ -55,6 +55,6 @@ export default function TemplateSelection() {
 
                 <Button sx={{ mt: 2, width: '30%' }} variant="contained" type="submit" label="Siguiente" onClick={saveWhatsAppTemplate}>Siguiente</Button>
             </FormControl>
-        </div>
+        </Paper>
     )
 }

@@ -10,6 +10,16 @@ const theme = createTheme({
             contrastText: '#fff'
         },
     },
+    components:{
+        MuiPaper:{
+            styleOverrides:{
+                root:{
+                    padding: 20,
+                    marginTop: 20
+                }
+            }
+        }
+    }
     // components: {
     //     MuiCssBaseline: {
     //         styleOverrides: {

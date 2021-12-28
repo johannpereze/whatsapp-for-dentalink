@@ -1,4 +1,5 @@
 import './App.css';
+import AppointmentsUpdateForm from './components/AppointmentsUpdateForm';
 // import AppointmentsUpdateForm from './components/AppointmentsUpdateForm';
 import ClinicsList from './components/ClinicsList';
 import DateSelection from './components/DateSelection';
@@ -21,7 +22,7 @@ function App() {
       <ClinicsList />
       <TemplateSelection />
       <SummaryAndSending />
-      {/* <AppointmentsUpdateForm /> */}
+      <AppointmentsUpdateForm />
     </div>
   )
 }

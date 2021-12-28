@@ -43,6 +43,7 @@ export default function KeyInput() {
                 Iniciar Sesión
             </Typography>
             <FormControl fullWidth sx={{ mt: 2 }} variant="outlined">
+                {/* debería tener onsubmit o algo así para que funcione con el enter */}
                 <InputLabel htmlFor="outlined-adornment-password">Contraseña Dentalink</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"

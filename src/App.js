@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import AppointmentsUpdateForm from './components/AppointmentsUpdateForm';
-// import AppointmentsUpdateForm from './components/AppointmentsUpdateForm';
 import ClinicsList from './components/ClinicsList';
 import DateSelection from './components/DateSelection';
 import HorizontalStepper from './components/HorizontalStepper';
@@ -17,7 +16,7 @@ function App() {
     responsiveAppBar: true,
     horizontalStepper: true,
     keyInput: true,
-    lineSelection: false,
+    lineSelection: true,
     dateSelection: false,
     clinicsList: false,
     templateSelection: false,
@@ -37,15 +36,51 @@ function App() {
 
   return (
     <div >
-      {responsiveAppBar && <ResponsiveAppBar componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {horizontalStepper && <HorizontalStepper componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {keyInput && <KeyInput componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {lineSelection && <LineSelection componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {dateSelection && <DateSelection componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {clinicsList && <ClinicsList componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {templateSelection && <TemplateSelection componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {summaryAndSending && <SummaryAndSending componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
-      {appointmentsUpdateForm && <AppointmentsUpdateForm componentVisibility={componentVisibility} setComponentVisibility={setComponentVisibility} />}
+      {responsiveAppBar
+        && <ResponsiveAppBar
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {horizontalStepper
+        && <HorizontalStepper
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {keyInput
+        && <KeyInput
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {lineSelection
+        && <LineSelection
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {dateSelection
+        && <DateSelection
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {clinicsList
+        && <ClinicsList
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {templateSelection
+        && <TemplateSelection
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {summaryAndSending
+        && <SummaryAndSending
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
+      {appointmentsUpdateForm
+        && <AppointmentsUpdateForm
+          componentVisibility={componentVisibility}
+          setComponentVisibility={setComponentVisibility}
+        />}
     </div>
   )
 }

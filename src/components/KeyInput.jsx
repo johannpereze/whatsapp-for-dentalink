@@ -34,7 +34,6 @@ export default function KeyInput({ componentVisibility, setComponentVisibility }
     const saveDentalinkKey = (e) => {
         e.preventDefault()
         console.log(dentalinkKey);
-        console.log("Ocultamos componente");
         setComponentVisibility({ ...componentVisibility, lineSelection: true, keyInput: false })
     }
 

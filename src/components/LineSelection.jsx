@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, FormControl, InputLabel, MenuItem, Paper, Select, TextField, Typography } from '@mui/material'
 
-export default function LineSelection() {
+export default function LineSelection({ componentVisibility, setComponentVisibility }) {
 
     const [whatsAppLine, setWhatsAppLine] = useState("")
     const [whatsAppNote, setWhatsAppNote] = useState("")
@@ -18,9 +18,9 @@ export default function LineSelection() {
 
     const saveWhatsAppAndNote = (e) => {
         console.log(e); //Creo que no necesito el evento
-        console.log("Ocultamos componente");
         console.log(whatsAppLine);
         console.log(whatsAppNote);
+        setComponentVisibility({ ...componentVisibility, lineSelection: false, dateSelection: true })
     }
 
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, FormControl, InputLabel, MenuItem, Paper, Select, Typography } from '@mui/material'
 
-export default function TemplateSelection() {
+export default function TemplateSelection({ componentVisibility, setComponentVisibility }) {
 
     //NO HE PODIDO SETEAR LOS ESTADOS DE ESTE COMPONENTE
     const [selectedTemplateInput, setSelectedTemplateInput] = useState("")
@@ -33,7 +33,7 @@ export default function TemplateSelection() {
 
     const saveWhatsAppTemplate = () => {
         console.log(selectedTemplateInput);
-        console.log("Ocultamos Componente");
+        setComponentVisibility({ ...componentVisibility, templateSelection: false, summaryAndSending: true })
     }
 
     return (

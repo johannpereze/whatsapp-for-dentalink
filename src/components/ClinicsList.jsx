@@ -3,10 +3,10 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button, Paper, Typography } from '@mui/material';
 
 
-export default function ClinicsList() {
+export default function ClinicsList({ componentVisibility, setComponentVisibility }) {
 
     const saveSelectedClinics = () => {
-        console.log('Ocultando Componente');
+        setComponentVisibility({ ...componentVisibility, dateSelection: false, templateSelection: true })
     }
 
     const columns = [

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import AppointmentsUpdateForm from './components/AppointmentsUpdateForm';
-import ClinicsList from './components/ClinicsList';
 import DateSelection from './components/DateSelection';
 import HorizontalStepper from './components/HorizontalStepper';
 import KeyInput from './components/KeyInput';
@@ -16,7 +15,7 @@ function App() {
     responsiveAppBar: true,
     horizontalStepper: true,
     keyInput: true,
-    lineSelection: true,
+    lineSelection: false,
     dateSelection: false,
     clinicsList: false,
     templateSelection: false,
@@ -29,7 +28,6 @@ function App() {
     keyInput,
     lineSelection,
     dateSelection,
-    clinicsList,
     templateSelection,
     summaryAndSending,
     appointmentsUpdateForm } = componentVisibility
@@ -58,11 +56,6 @@ function App() {
         />}
       {dateSelection
         && <DateSelection
-          componentVisibility={componentVisibility}
-          setComponentVisibility={setComponentVisibility}
-        />}
-      {clinicsList
-        && <ClinicsList
           componentVisibility={componentVisibility}
           setComponentVisibility={setComponentVisibility}
         />}
